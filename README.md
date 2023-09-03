@@ -29,7 +29,7 @@ Compared with previous works on novel view synthesis, NeRF is a simple, yet powe
 As of today, the follow-up research aiming to scale and extend the idea to various tasks has become one of the most significant streams in the computer vision community thanks to its simplicity and versatility.
 
 In this assignment, we will take a technical deep dive into NeRF to understand this ground-breaking approach which will help us navigate a broader landscape of the field.
-We strongly recommend you check out the paper, together with [our brief summary](https://www.notion.so/geometry-kaist/Tutorial-2-NeRF-Neural-Radiance-Field-ef0c1f3446434162a540e6afc7aeccc8?pvs=4), before, or while working on this assignment.
+We strongly recommend you check out the paper, together with [our brief summary](https://geometry-kaist.notion.site/Tutorial-2-NeRF-Neural-Radiance-Field-ef0c1f3446434162a540e6afc7aeccc8?pvs=4), before, or while working on this assignment.
 
 > :warning: **This assignment involves training a neural network that takes approximately 2 hours. Start as early as possible.**
 
