@@ -3,7 +3,7 @@
     NeRF: 3D Reconstruction from 2D Images
   </h1>
   <p>
-    <a href=https://mhsung.github.io/kaist-cs479-fall-2023/ target="_blank"><b>KAIST CS479: Machine Learning for 3D Data (2023 Fall)</b></a><br>
+    <a href=https://mhsung.github.io/kaist-cs479-fall-2023/ target="_blank"><b>KAIST CS479: Machine Learning for 3D Data (Fall 2023)</b></a><br>
     Programming Assignment 2    
   </p>
 </div>
@@ -29,7 +29,7 @@ Compared with previous works on novel view synthesis, NeRF is a simple, yet powe
 As of today, the follow-up research aiming to scale and extend the idea to various tasks has become one of the most significant streams in the computer vision community thanks to its simplicity and versatility.
 
 In this assignment, we will take a technical deep dive into NeRF to understand this ground-breaking approach which will help us navigate a broader landscape of the field.
-We strongly recommend you check out the paper, together with [our brief summary](https://www.notion.so/geometry-kaist/Tutorial-2-NeRF-Neural-Radiance-Field-ef0c1f3446434162a540e6afc7aeccc8?pvs=4), before, or while working on this assignment.
+We strongly recommend you check out the paper, together with [our brief summary](https://geometry-kaist.notion.site/Tutorial-2-NeRF-Neural-Radiance-Field-ef0c1f3446434162a540e6afc7aeccc8?pvs=4), before, or while working on this assignment.
 
 > :warning: **This assignment involves training a neural network that takes approximately 2 hours. Start as early as possible.**
 
@@ -207,7 +207,7 @@ where
 T_i = \exp \left( - \sum_{j=1}^{i-1} \sigma_j \delta_j \right).
 ```
 
-> :bulb: The PyTorch APIs [`torch.exp`](https://pytorch.org/docs/stable/generated/torch.exp.html?highlight=exp#torch.exp), [`torch.cummsum`](https://pytorch.org/docs/stable/generated/torch.cumsum.html?highlight=cumsum#torch.cumsum), and [`torch.sum`](https://pytorch.org/docs/stable/generated/torch.sum.html?highlight=sum#torch.sum) might be useful when implementing the quadrature integration.
+> :bulb: The PyTorch APIs [`torch.exp`](https://pytorch.org/docs/stable/generated/torch.exp.html?highlight=exp#torch.exp), [`torch.cumsum`](https://pytorch.org/docs/stable/generated/torch.cumsum.html?highlight=cumsum#torch.cumsum), and [`torch.sum`](https://pytorch.org/docs/stable/generated/torch.sum.html?highlight=sum#torch.sum) might be useful when implementing the quadrature integration.
 
 ### Task 4. Qualitative \& Quantitative Evaluation
 
@@ -299,5 +299,5 @@ If you are interested in this topic, we encourage you to check out the papers li
 - [Point-NeRF: Point-based Neural Radiance Fields (CVPR 2022)](https://arxiv.org/abs/2201.08845)
 - [Instant-NGP: Instant Neural Graphics Primitives with a Multiresolution Hash Encoding (SIGGRAPH 2022)](https://arxiv.org/abs/2201.05989)
 - [TensoRF: Tensorial Radiance Fields (ECCV 2022)](https://arxiv.org/abs/2203.09517)
-- [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (ICCV 2023)](https://arxiv.org/abs/2304.06706)
 - [MobileNeRF: Exploiting the Polygon Rasterization Pipeline for Efficient Neural Field Rendering on Mobile Architectures (CVPR 2023)](https://arxiv.org/abs/2208.00277v5)
+- [Zip-NeRF: Anti-Aliased Grid-Based Neural Radiance Fields (ICCV 2023)](https://arxiv.org/abs/2304.06706)
