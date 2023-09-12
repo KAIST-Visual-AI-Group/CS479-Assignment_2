@@ -82,6 +82,9 @@ python torch_nerf/runners/train.py
 ```
 All by-products produced during each run, including TensorBoard logs, will be saved under an experiment directory under `outputs`. This is automatically done by [Hydra](https://hydra.cc), the library we use for managing our config files. Refer to [the official documentation](https://hydra.cc/docs/intro/) for examples and APIs.
 
+**We highly encourage you to try out multiple seeds as the performance of neural networks is often sensitive to the initialization.**
+The function `init_torch` that sets the random seed for PyTorch is located at `torch_nerf/runners/utils.py`
+
 > :bulb: **Each run takes approximately 2 hours on a single NVIDIA RTX 3090 GPU and consumes around 10 GB of VRAM.**
 
 After training NeRF, it can be rendered using the script `render.py.`
