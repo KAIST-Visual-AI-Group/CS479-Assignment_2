@@ -19,7 +19,7 @@
   <img src="./media/nerf_blender/lego.gif" width="400" />
 </div>
 
-#### Due: October 1, 2023 (Sunday) 23:59 KST
+#### Due: October 9, 2023 (Monday) 23:59 KST
 #### Where to Submit: Gradescope
 
 ## Abstract
