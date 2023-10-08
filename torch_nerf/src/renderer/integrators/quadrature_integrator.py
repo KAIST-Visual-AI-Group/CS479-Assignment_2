@@ -43,14 +43,21 @@ class QuadratureIntegrator(IntegratorBase):
         """
         # TODO
         # HINT: Look up the documentation of 'torch.cumsum'.
-        
-        transmittance = torch.exp(-1*torch.cumsum(sigma*delta, dim=-1))
-        opacity = 1 - torch.exp(-sigma * delta)
+        #print('sigma device',sigma.get_device())
+        #print('radiance device',radiance.get_device())
+        #print('delta device',delta.get_device())
+        transmittance = torch.exp(-1*torch.cumsum(sigma*delta.cuda(), dim=-1))
+        #transmittance.cuda()
+        opacity = 1 - torch.exp(-sigma * delta.cuda())
+        #opacity.cuda()
         weights = transmittance * opacity
-        print('weights shape', weights.shape)
-        print('transmittance shape', transmittance.shape)
-        print('opacity shape', opacity.shape)
-
-        rgbs = torch.sum(weights * radiance , dim=-2)
-        print('rgbs shape', rgbs.shape)
+        #weights.cuda()
+        #print('weights shape', weights.shape)
+        #print('transmittance shape', transmittance.shape)
+        #print('opacity shape', opacity.shape)
+        #print('WEIGHTS SHAPE',weights.size())
+        #print('RADIANCE SHAPE',radiance.size())
+        rgbs = torch.sum(weights.unsqueeze(-1) * radiance , dim=-2)
+        #rgbs.cuda()
+        #print('rgbs shape', rgbs.shape)
         return rgbs,weights

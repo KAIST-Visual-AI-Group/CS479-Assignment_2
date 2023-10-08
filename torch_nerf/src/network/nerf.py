@@ -8,6 +8,7 @@ from typeguard import typechecked
 from jaxtyping import Float, jaxtyped
 import torch
 import torch.nn as nn
+import torch.nn.functional as F
 
 
 class NeRF(nn.Module):
@@ -50,7 +51,8 @@ class NeRF(nn.Module):
         self.sigma_head = nn.Linear(feat_dim, 1)
 
         self.mlp9 = nn.Linear(feat_dim+view_dir_dim, int(feat_dim/2)) #128 out_channels layer
-        self.radiance_head = nn.Linear(feat_dim, 3) # radiance (RGB) head
+        self.radiance_head = nn.Linear(int(feat_dim/2), 3) # radiance (RGB) head
+        self.sigmoid = nn.Sigmoid()
 
     @jaxtyped
     @typechecked
@@ -75,24 +77,24 @@ class NeRF(nn.Module):
         """
 
         # TODO
-        fc = nn.ReLU(self.input_mlp(pos))
-        fc = nn.ReLU(self.mlp1(fc))
-        fc = nn.ReLU(self.mlp2(fc))
-        fc = nn.ReLU(self.mlp3(fc))
-        fc = nn.ReLU(self.mlp4(fc))
+        fc = F.relu(self.input_mlp(pos))
+        fc = F.relu(self.mlp1(fc))
+        fc = F.relu(self.mlp2(fc))
+        fc = F.relu(self.mlp3(fc))
+        fc = F.relu(self.mlp4(fc))
         res1 = torch.cat((fc, pos), dim=1) # skip connection, dims: 256+gamma(pos_dim)=256+60=316
 
-        fc = nn.ReLU(self.mlp5(res1))
-        fc = nn.ReLU(self.mlp6(fc))
-        fc = nn.ReLU(self.mlp7(fc))
+        fc = F.relu(self.mlp5(res1))
+        fc = F.relu(self.mlp6(fc))
+        fc = F.relu(self.mlp7(fc))
         
-        sigma = nn.ReLU(self.sigma_head(fc)) # sigma head. dims: 256 --> 1
+        sigma = F.relu(self.sigma_head(fc)) # sigma head. dims: 256 --> 1
 
         fc = self.mlp8(fc) # no activation (orange arrow layer)
         res2 = torch.cat((fc, view_dir), dim=1) # sigma feature vector dims: feature_dim+gamma(dir)=256+24=280  
         
-        fc = nn.ReLU(self.mlp9(res2))  # dims: 256+24=280 --> 128
+        fc = F.relu(self.mlp9(res2))  # dims: 256+24=280 --> 128
 
-        radiance = nn.sigmoid(self.radiance_head(fc)) # radiance (RGB) head. dims: 128 --> 3
+        radiance = self.sigmoid(self.radiance_head(fc)) # radiance (RGB) head. dims: 128 --> 3
         return sigma,radiance
 

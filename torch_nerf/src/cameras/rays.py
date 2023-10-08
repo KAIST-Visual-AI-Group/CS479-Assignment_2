@@ -77,7 +77,34 @@ class RaySamples:
             coords: Coordinates of points sampled along rays in the ray bundle.
         """
         # TODO
-        coords = self.ray_bundle.origins + self.t_samples * self.ray_bundle.directions
+        
+        coords = torch.zeros(self.t_samples.size())
+        coords = torch.unsqueeze(coords,dim=-1)
+        coords = coords.expand(-1,-1,self.ray_bundle.origins.size(-1)).clone().cuda()
+        
+        #print('\n\n\nCOORDS',coords.size(),'\n\n\n')
+        #print('\n\n\nORIGINS',self.ray_bundle.origins.size(),'\n\n\n')
+        #print('\n\n\nDIRECTIONS',self.ray_bundle.directions.size(),'\n\n\n')
+        #print('\n\n\nT_SAMPLES',self.t_samples.size(),'\n\n\n')
+        
+        coords = self.ray_bundle.origins.unsqueeze(1).cuda() + self.t_samples.unsqueeze(-1).cuda() * self.ray_bundle.directions.unsqueeze(1).cuda() 
+        ''' #FOR LOOP version, took too long
+        #import time
+        #start = time.time()        
+        #for i,t_s in enumerate(self.t_samples):
+            #print("TS SIZE IS:",t_s.size(),'\n\n')
+        #    for j,t in enumerate(t_s):
+                #print('T IS',t,'\n')
+        #        ray_t = self.ray_bundle.origins[i] + t.item() * self.ray_bundle.directions[i]
+        #        coords[i][j].copy_(ray_t) 
+        end = time.time()
+        #runtime = end-start
+        #print(f"FOR LOOP TOOK {runtime:.4f}")
+        '''
+        #print('\n\n\nCOORDS IS:',coords[0][:3],'\n\n\n')
+        #print('\n\n\nORIGINS',self.ray_bundle.origins[:3],'\n\n\n')
+        #print('\n\n\nDIRECTIONS',self.ray_bundle.directions[:3],'\n\n\n')
+        #print('\n\n\nT_SAMPLES',self.t_samples[0][:3],'\n\n\n')
         return coords
 
     @jaxtyped
