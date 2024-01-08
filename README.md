@@ -238,7 +238,7 @@ python torch_nerf/runners/evaluate.py ${RENDERED_IMG_DIR} ./data/nerf_synthetic/
 The metrics measured after training the network for 50k iterations on the `lego` scene are summarized in the following table.
 | LPIPS (↓) | PSNR (↑) | SSIM (↑) |
 |---|---|---|
-| 0.0424 | 29.5089 | 0.9551 |
+| 0.0481 | 28.9258 | 0.9473 |
 
 > :bulb: **For details on grading, refer to section [Evaluation Criteria](#evaluation-criteria).**
 
