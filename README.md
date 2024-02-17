@@ -46,7 +46,7 @@ We strongly recommend you check out the paper, together with [our brief summary]
   - [Task 3. Implementing Volume Rendering Equation](#task-3-implementing-volume-rendering-equation)
   - [Task 4. Qualitative \& Quantitative Evaluation](#task-4-qualitative--quantitative-evaluation)
   - [(Optional) Task 5. Train NeRF with Your Own Data](#optional-task-5-train-nerf-with-your-own-data)
-- [Submission Guidelines](#submission-guidelines)
+- [What to Submit](#what-to-submit)
 - [Grading](#grading)
 - [Further Readings](#further-readings)
 </details>
