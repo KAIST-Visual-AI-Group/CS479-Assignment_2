@@ -240,7 +240,7 @@ The metrics measured after training the network for 50k iterations on the `lego`
 |---|---|---|
 | 0.0481 | 28.9258 | 0.9473 |
 
-> :bulb: **For details on grading, refer to section [Evaluation Criteria](#evaluation-criteria).**
+> :bulb: **For details on grading, refer to section [Grading](#grading).**
 
 ### (Optional) Task 5. Train NeRF with Your Own Data
 
