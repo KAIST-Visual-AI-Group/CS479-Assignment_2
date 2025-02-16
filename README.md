@@ -246,12 +246,12 @@ Instead of using the provided dataset, capture your surrounding environment and 
 
 ## What to Submit
 
-Compile the following files as a **ZIP** file named `{NAME}_{STUDENT_ID}.zip` and submit the file via Gradescope.
+Compile the following files as a **ZIP** file named `{STUDENT_ID}.zip` and submit the file via Gradescope.
   
 - The folder `torch_nerf` that contains every source code file;
-- A folder named `{NAME}_{STUDENT_ID}_renderings` containing the renderings (`.png` files) from the **test views** used for computing evaluation metrics;
-- A text file named `{NAME}_{STUDENT_ID}.txt` containing **a comma-separated list of LPIPS, PSNR, and SSIM** from quantitative evaluation;
-- The checkpoint file named `{NAME}_{STUDENT_ID}.pth` used to produce the above metrics.
+- A folder named `{STUDENT_ID}_renderings` containing the renderings (`.png` files) from the **test views** used for computing evaluation metrics;
+- A text file named `{STUDENT_ID}.txt` containing **a comma-separated list of LPIPS, PSNR, and SSIM** from quantitative evaluation;
+- The checkpoint file named `{STUDENT_ID}.pth` used to produce the above metrics.
 
 ## Grading
 
@@ -264,23 +264,23 @@ Compile the following files as a **ZIP** file named `{NAME}_{STUDENT_ID}.zip` an
 
 **Your score will incur a 10% deduction for each missing item in the [Submission Guidelines](#submission-guidelines) section.**
 
-Otherwise, you will receive up to 300 points from this assignment that count toward your final grade.
+Otherwise, you will receive up to 30 points from this assignment that count toward your final grade.
 
 | Evaluation Criterion | LPIPS (↓) | PSNR (↑) | SSIM (↑) |
 |---|---|---|---|
 | **Success Condition \(100%\)** | **0.06** | **28.00** | **0.90** |
 | **Success Condition \(50%)**   | **0.10**  | **20.00** | **0.60** |
 
-As shown in the table above, each evaluation metric is assigned up to 100 points. In particular,
+As shown in the table above, each evaluation metric is assigned up to 10 points. In particular,
 - **LPIPS**
-  - You will receive 100 points if the reported value is equal to or, *smaller* than the success condition \(100%)\;
-  - Otherwise, you will receive 50 points if the reported value is equal to or, *smaller* than the success condition \(50%)\.
+  - You will receive 10 points if the reported value is equal to or, *smaller* than the success condition \(100%)\;
+  - Otherwise, you will receive 5 points if the reported value is equal to or, *smaller* than the success condition \(50%)\.
 - **PSNR**
-  - You will receive 100 points if the reported value is equal to or, *greater* than the success condition \(100%)\;
-  - Otherwise, you will receive 50 points if the reported value is equal to or, *greater* than the success condition \(50%)\.
+  - You will receive 10 points if the reported value is equal to or, *greater* than the success condition \(100%)\;
+  - Otherwise, you will receive 5 points if the reported value is equal to or, *greater* than the success condition \(50%)\.
 - **SSIM**
-  - You will receive 100 points if the reported value is equal to or, *greater* than the success condition \(100%)\;
-  - Otherwise, you will receive 50 points if the reported value is equal to or, *greater* than the success condition \(50%)\.
+  - You will receive 10 points if the reported value is equal to or, *greater* than the success condition \(100%)\;
+  - Otherwise, you will receive 5 points if the reported value is equal to or, *greater* than the success condition \(50%)\.
 
 ## Further Readings
 
