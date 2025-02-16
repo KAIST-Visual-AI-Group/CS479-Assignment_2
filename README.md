@@ -3,7 +3,7 @@
     NeRF: 3D Reconstruction from 2D Images
   </h1>
   <p>
-    <a href=https://mhsung.github.io/kaist-cs479-fall-2023/ target="_blank"><b>KAIST CS479: Machine Learning for 3D Data (Fall 2023)</b></a><br>
+    <a href=https://mhsung.github.io/kaist-cs479-fall-2023/ target="_blank"><b>KAIST CS479: Machine Learning for 3D Data</b></a><br>
     Programming Assignment 2    
   </p>
 </div>
@@ -18,9 +18,6 @@
 <div align=center>
   <img src="./media/nerf_blender/lego.gif" width="400" />
 </div>
-
-#### Due: October 9, 2023 (Monday) 23:59 KST
-#### Where to Submit: Gradescope
 
 ## Abstract
 
